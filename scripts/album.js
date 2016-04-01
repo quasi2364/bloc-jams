@@ -26,6 +26,20 @@ var albumMarconi = {
     ]
 };
 
+var albumBeatles = {
+    title: "Abbey Road",
+    artist: "The Bealtes",
+    label: 'EMI',
+    year: '1969',
+    albumArtUrl: 'assets/images/album_covers/06.png',
+    songs: [
+        {title: 'Come Together', duration: '1:01'},
+        {title: 'Something', duration: '2:01'},
+        {title: 'Maxwell Silver Hammer', duration: '3:01'},
+        {title: 'Sun King', duration: '4:01'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
          '<tr class="album-view-song-item">'
@@ -39,11 +53,6 @@ var createSongRow = function(songNumber, songName, songLength) {
 };
 
 var setCurrentAlbum = function(album) {
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
     
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -57,6 +66,23 @@ var setCurrentAlbum = function(album) {
     }
 };
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 window.onload = function() {
-    setCurrentAlbum(albumPicasso);
+    setCurrentAlbum(albumBeatles);
+    
+    albumImage.addEventListener("click", setCurrentAlbum(nextAlbum));
+    
+    i = 1;
+    var nextAlbum = function() {
+        var albums = [albumBeatles, albumMarconi, albumPicasso];
+        return albums[i];
+        i++;
+    };
 };
+
+
