@@ -72,17 +72,50 @@ var albumReleaseInfo = document.getElementsByClassName('album-view-release-info'
 var albumImage = document.getElementsByClassName('album-cover-art')[0];
 var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+    
+//Album button templates
+var playButtonTemplate = '<a class="alb w   wwum-song-button"><span class="ion-play"></span></a>';
+
 window.onload = function() {
     setCurrentAlbum(albumBeatles);
     
-    albumImage.addEventListener("click", setCurrentAlbum(nextAlbum));
+    songListContainer.addEventListener('mouseover', function(event) {
+        // Only target individual song rows during event delegation
+        if (event.target.parentElement.className === 'album-view-song-item') {
+            // Change content from number to play button's HTML
+            event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+            
+        }
+    });
     
-    i = 1;
+    
+    var albums = [albumBeatles, albumMarconi, albumPicasso];
+    
+    var i = 0;
     var nextAlbum = function() {
-        var albums = [albumBeatles, albumMarconi, albumPicasso];
-        return albums[i];
-        i++;
+        console.log(i);
+        return albums[i++];
     };
+
+    
+    var test = function(){
+        console.log('test');
+    }
+    albumImage.addEventListener("click", test);
+    
+//    var cover = document.getElementsByClassName('album-cover-art')[0];
+//    var count = 0;
+//    
+//    cover.addEventListener('click', function(){
+//        if(count >= albums.length - 1){
+//            count = 0
+//        } else {
+//            count++;
+//        }
+//        setCurrentAlbum(albums[count]);
+//    })
+    
 };
 
 
