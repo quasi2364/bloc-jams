@@ -47,9 +47,9 @@ var createSongRow = function(songNumber, songName, songLength) {
         +'  <td class="song-item-title">' + songName + '</td>'
         +'  <td class="song-item-duration">' + songLength + '</td>'
         +'</tr>'
-        ;
+    ;
         
-        return template;
+    return template;
 };
 
 var setCurrentAlbum = function(album) {
@@ -76,7 +76,7 @@ var songListContainer = document.getElementsByClassName('album-view-song-list')[
 var songRows = document.getElementsByClassName('album-view-song-item');
     
 //Album button templates
-var playButtonTemplate = '<a class="alb w   wwum-song-button"><span class="ion-play"></span></a>';
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 
 window.onload = function() {
     setCurrentAlbum(albumBeatles);
