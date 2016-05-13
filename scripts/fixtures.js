@@ -7,10 +7,11 @@ var albumPicasso = {
     year: '1981',
     albumArtUrl: 'assets/images/album_covers/01.png',
     songs: [
-        {title: 'Hello, Operator', duration: '1:01'},
-        {title: 'Ring Ring', duration: '2:01'},
-        {title: 'Can you hear me knocking', duration: '3:01'},
-        {title: 'Wrong number', duration: '4:01'}
+         { title: 'Blue', duration: '4:26', audioUrl: '/assets/music/bloc_jams_music/blue' },
+         { title: 'Green', duration: '3:14', audioUrl: '/assets/music/bloc_jams_music/green' },
+         { title: 'Red', duration: '5:01', audioUrl: '/assets/music/bloc_jams_music/red' },
+         { title: 'Pink', duration: '3:21', audioUrl: '/assets/music/bloc_jams_music/pink' },
+         { title: 'Magenta', duration: '2:15', audioUrl: '/assets/music/bloc_jams_music/magenta' }
     ]
 };
 
@@ -21,10 +22,11 @@ var albumMarconi = {
     year: '1909',
     albumArtUrl: 'assets/images/album_covers/20.png',
     songs: [
-        {title: 'Hello, Operator', duration: '1:01'},
-        {title: 'Ring Ring', duration: '2:01'},
-        {title: 'Can you hear me knocking', duration: '3:01'},
-        {title: 'Wrong number', duration: '4:01'}
+         { title: 'Blue', duration: '4:26', audioUrl: '/assets/music/blue' },
+         { title: 'Green', duration: '3:14', audioUrl: '/assets/music/green' },
+         { title: 'Red', duration: '5:01', audioUrl: '/assets/music/red' },
+         { title: 'Pink', duration: '3:21', audioUrl: '/assets/music/pink' },
+         { title: 'Magenta', duration: '2:15', audioUrl: '/assets/music/magenta' }  
     ]
 };
 
