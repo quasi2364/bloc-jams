@@ -4,7 +4,7 @@
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
-// Player Play & Pause button
+// Main Player Play & Pause button
 var playerBarPlayButton = '<span class="ion-play"></span>';
 var playerBarPauseButton = '<span class="ion-pause"></span>';
 
@@ -200,7 +200,28 @@ var previousSong = function() {
     $lastSongNumberCell.html(lastSongNumber);
 };
     
+var $mainPlayPause = $('.main-controls .play-pause');
 
+var togglePlayFromPlayerBar = function() {
+//    if (currentSoundFile == null) {
+//        currentSoundFile = new buzz.sound(currentAlbum.songs.first.audioUrl, {
+//        formats: ['mp3'],
+//        preload: true
+//        });
+//        currentSoundFile.play();
+//        $mainPlayPause.html(playerBarPauseButton);        
+//    } 
+    
+    if (currentSoundFile.isPaused) {
+        console.log("Play");
+        currentSoundFile.play();
+        $mainPlayPause.html(playerBarPauseButton); 
+    } else if (currentSoundFile) {
+        console.log("pause");
+        currentSoundFile.pause();
+        $mainPlayPause.html(playerBarPlayButton);
+    } 
+};
 
 //======== DOCUMENT READY =========================
 
@@ -209,6 +230,7 @@ $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $mainPlayPause.click(togglePlayFromPlayerBar);
    
 });
 
