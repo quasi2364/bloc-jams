@@ -229,6 +229,7 @@ var previousSong = function() {
 $(document).ready(function() {
 
     setCurrentAlbum(albumPicasso);
+    setupSeekBars();
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
    
