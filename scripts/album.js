@@ -79,7 +79,7 @@ var createSongRow = function(songNumber, songName, songLength) {
             
             var $volumeFill = $('.volume .fill');
             var $volumeThumb = $('.volume .thumb');
-            $volumeFill.width(currentVolune + "%");
+            $volumeFill.width(currentVolume + "%");
             $volumeThumb.css({left: currentVolume + '%'});
             
         } else if (currentlyPlayingSongNumber === songNumber) {
